@@ -29,6 +29,9 @@ final class LoginViewModel {
         
         do{
             let session = try await loginUseCase.execute(email: email, password: password)
+            print(session.accessToken)
+            print(session.expiresAt)
+            print(session.refreshToken)
         } catch let error as LoginError {
             errorMessage = message(for: error)
         } catch {

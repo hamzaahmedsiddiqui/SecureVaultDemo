@@ -15,6 +15,6 @@ struct MockAuthenticationRepository: AuthenticationRepository {
             throw LoginError.invalidCredentials
         }
         
-        return AuthSession(accessToken: "mock-access-token", refreshToken: "mock-refresh-token", expiresAt: Date().addingTimeInterval(<#T##timeInterval: TimeInterval##TimeInterval#>))
+        return AuthSession(accessToken: "mock-access-token", refreshToken: "mock-refresh-token", expiresAt: Date().addingTimeInterval(900))
     }
 }
