@@ -17,4 +17,8 @@ actor SessionManager {
     func currentAccessToken() -> String? {
         session?.accessToken
     }
+    
+    func clear() {
+        session = nil
+    }
 }

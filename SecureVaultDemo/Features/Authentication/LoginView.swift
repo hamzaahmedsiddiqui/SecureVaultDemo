@@ -40,5 +40,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(viewModel: LoginViewModel(loginUseCase: LoginUseCase(repository: MockAuthenticationRepository())) )
+    LoginView(viewModel: AppCompositionRoot.makeLoginViewModel())
 }
