@@ -11,7 +11,7 @@ import SwiftUI
 struct SecureVaultDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: AppCompositionRoot.makeLoginViewModel())
+            ContentView()
         }
     }
 }

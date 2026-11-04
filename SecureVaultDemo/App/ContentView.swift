@@ -1,21 +1,23 @@
-//
-//  ContentView.swift
-//  SecureVaultDemo
-//
-//  Created by hamza Ahmed on 2026-09-12.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State var isLoggedIn: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        if isLoggedIn{
+            DashboardView(
+                viewModel: AppCompositionRoot.makeDashboardViewModel(
+                    onLogout: {
+                        isLoggedIn = false
+                    })
+            )}else {
+                LoginView(
+                    viewModel: AppCompositionRoot.makeLoginViewModel(
+                        onLoginSuccess: {
+                            isLoggedIn =  true
+                        })
+                )
+            }
     }
 }
 

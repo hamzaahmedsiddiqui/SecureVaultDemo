@@ -9,13 +9,16 @@ import Foundation
 @MainActor
 @Observable
 final class DashboardViewModel {
-    let logoutUseCase: LogoutUseCase
+    private let logoutUseCase: LogoutUseCase
+    private let onLogout: () -> Void
     
-    init(logoutUseCase: LogoutUseCase) {
+    init(logoutUseCase: LogoutUseCase, onLogout: @escaping() -> Void) {
         self.logoutUseCase = logoutUseCase
+        self.onLogout = onLogout
     }
 
     func logout() async {
         await logoutUseCase.execute()
+        onLogout()
     }
 }

@@ -26,5 +26,5 @@ struct DashboardView: View {
 
 
 #Preview {
-    DashboardView(viewModel: AppCompositionRoot.makeDashboardViewModel())
+    DashboardView(viewModel: AppCompositionRoot.makeDashboardViewModel(onLogout: {}))
 }

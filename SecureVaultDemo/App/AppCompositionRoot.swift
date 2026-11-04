@@ -9,14 +9,14 @@ import Foundation
 
 enum AppCompositionRoot {
     static let sessionManager = SessionManager()
-    static func makeLoginViewModel() -> LoginViewModel{
-        let repository = MockAuthenticationRepository()
-        let useCase = LoginUseCase(repository: repository, sessionManager: sessionManager)
-        return LoginViewModel(loginUseCase: useCase)
-    }
-    
-    static func makeDashboardViewModel() -> DashboardViewModel {
-        let useCase = LogoutUseCase(sessionManager: sessionManager)
-        return DashboardViewModel(logoutUseCase: useCase)
-    }
+    static func makeLoginViewModel(onLoginSuccess: @escaping () -> Void) -> LoginViewModel {
+          let repository = MockAuthenticationRepository()
+          let useCase = LoginUseCase(repository: repository, sessionManager: sessionManager)
+          return LoginViewModel(loginUseCase: useCase, onLoginSuccess: onLoginSuccess)
+      }
+
+      static func makeDashboardViewModel(onLogout: @escaping () -> Void) -> DashboardViewModel {
+          let useCase = LogoutUseCase(sessionManager: sessionManager)
+          return DashboardViewModel(logoutUseCase: useCase, onLogout: onLogout)
+      }
 }

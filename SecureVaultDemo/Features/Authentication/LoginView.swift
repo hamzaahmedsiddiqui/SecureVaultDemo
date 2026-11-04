@@ -40,5 +40,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(viewModel: AppCompositionRoot.makeLoginViewModel())
+    LoginView(viewModel: AppCompositionRoot.makeLoginViewModel(onLoginSuccess: {}))
 }

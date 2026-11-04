@@ -12,14 +12,16 @@ import Foundation
 
 final class LoginViewModel {
     private let loginUseCase: LoginUseCase
+    private let onLoginSuccess: () -> Void
     
     var email = ""
     var password = ""
     var isLoading = false
     var errorMessage: String?
     
-    init(loginUseCase: LoginUseCase){
+    init(loginUseCase: LoginUseCase, onLoginSuccess: @escaping () -> Void){
         self.loginUseCase = loginUseCase
+        self.onLoginSuccess = onLoginSuccess
     }
     
     func login() async {
@@ -28,10 +30,9 @@ final class LoginViewModel {
         errorMessage = nil
         
         do{
-            let session = try await loginUseCase.execute(email: email, password: password)
-            print(session.accessToken)
-            print(session.expiresAt)
-            print(session.refreshToken)
+            let _ = try await loginUseCase.execute(email: email, password: password)
+            onLoginSuccess()
+    
         } catch let error as LoginError {
             errorMessage = message(for: error)
         } catch {
