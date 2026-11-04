@@ -9,4 +9,5 @@ import Foundation
 
 protocol AuthenticationRepository: Sendable {
     func login(email: String, password: String) async throws -> AuthSession
+    func signUp(email: String, password: String) async throws -> AuthSession
 }

@@ -20,8 +20,6 @@ struct LoginView: View {
             
             SecureField("Password", text: $viewModel.password)
                 .textContentType(.password)
-            
-         
             Button{
                 Task{
                     await viewModel.login()

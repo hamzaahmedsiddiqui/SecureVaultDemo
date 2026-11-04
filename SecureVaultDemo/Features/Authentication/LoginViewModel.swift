@@ -30,7 +30,7 @@ final class LoginViewModel {
         errorMessage = nil
         
         do{
-            let _ = try await loginUseCase.execute(email: email, password: password)
+            _ = try await loginUseCase.execute(email: email, password: password)
             onLoginSuccess()
     
         } catch let error as LoginError {
