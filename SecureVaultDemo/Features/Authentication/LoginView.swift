@@ -10,7 +10,8 @@ import SwiftUI
 struct LoginView: View {
     
     @Bindable var viewModel: LoginViewModel
-    
+    let onSignUpTapped: () -> Void
+
     var body: some View {
         VStack(spacing: 16){
             TextField("Email", text: $viewModel.email)
@@ -32,11 +33,14 @@ struct LoginView: View {
                 }
             }
             .disabled(viewModel.isLoading)
+            Button("Don't have an account?"){
+                onSignUpTapped()
+            }
         }
         .padding()
     }
 }
 
 #Preview {
-    LoginView(viewModel: AppCompositionRoot.makeLoginViewModel(onLoginSuccess: {}))
+    LoginView(viewModel: AppCompositionRoot.makeLoginViewModel(onLoginSuccess: {}), onSignUpTapped: {})
 }

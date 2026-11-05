@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isLoggedIn: Bool = false
+    @State var signUpTapped: Bool = false
     
     var body: some View {
         if isLoggedIn{
@@ -10,12 +11,16 @@ struct ContentView: View {
                     onLogout: {
                         isLoggedIn = false
                     })
-            )}else {
+            )} else if signUpTapped{
+                SignUpView(viewModel: AppCompositionRoot.makeSignUpViewModel {
+                    isLoggedIn = true
+                }, onLoginTapped: { signUpTapped = false })
+            } else {
                 LoginView(
                     viewModel: AppCompositionRoot.makeLoginViewModel(
                         onLoginSuccess: {
                             isLoggedIn =  true
-                        })
+                        }), onSignUpTapped: { signUpTapped = true }
                 )
             }
     }
@@ -25,3 +30,6 @@ struct ContentView: View {
     ContentView()
 }
 
+// Creditials 
+// test@securevault.com
+// password123

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct SignUpView: View {
     @Bindable var viewModel: SignUpViewModel
+    let onLoginTapped: () -> Void
     
     var body: some View {
         VStack(spacing: 16){
@@ -24,11 +25,14 @@ struct SignUpView: View {
                 }
             }
             .disabled(viewModel.isLoading)
+            Button("Log In"){
+                onLoginTapped()
+            }
         }.padding()
     }
 }
 
 
 #Preview {
-    SignUpView(viewModel: AppCompositionRoot.makeSignUpViewModel {})
+    SignUpView(viewModel: AppCompositionRoot.makeSignUpViewModel {}, onLoginTapped: {})
 }
