@@ -26,4 +26,10 @@ enum AppCompositionRoot {
         let useCase = SignUpUseCase(repository: repository, sessionManager: sessionManager)
         return SignUpViewModel(useCase: useCase, onSignUpSuccess: onSignUpSuccess)
     }
+    
+    static func makeForgotPasswordViewModel() -> ForgotPasswordViewModel {
+        let repository = MockAuthenticationRepository()
+        let useCase = ForgotPasswordUseCase(repository: repository)
+        return ForgotPasswordViewModel(forgotPasswordUseCase: useCase)
+    }
 }

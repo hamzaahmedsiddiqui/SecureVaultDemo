@@ -11,7 +11,8 @@ struct LoginView: View {
     
     @Bindable var viewModel: LoginViewModel
     let onSignUpTapped: () -> Void
-
+    let onForgetPasswordTapped: () -> Void
+    
     var body: some View {
         VStack(spacing: 16){
             TextField("Email", text: $viewModel.email)
@@ -21,6 +22,11 @@ struct LoginView: View {
             
             SecureField("Password", text: $viewModel.password)
                 .textContentType(.password)
+            if let errorMessage = viewModel.errorMessage{
+                Text(errorMessage)
+                    .foregroundStyle(.red)
+                    .font(.footnote)
+            }
             Button{
                 Task{
                     await viewModel.login()
@@ -36,11 +42,20 @@ struct LoginView: View {
             Button("Don't have an account?"){
                 onSignUpTapped()
             }
+    
+            Button{
+                onForgetPasswordTapped()
+            } label: {
+                Text("Forgot your password? No problem")
+                    .foregroundStyle(.gray)
+                    .font(.footnote)
+                
+            }
         }
         .padding()
     }
 }
 
 #Preview {
-    LoginView(viewModel: AppCompositionRoot.makeLoginViewModel(onLoginSuccess: {}), onSignUpTapped: {})
+    LoginView(viewModel: AppCompositionRoot.makeLoginViewModel(onLoginSuccess: {}), onSignUpTapped: {}, onForgetPasswordTapped: {})
 }

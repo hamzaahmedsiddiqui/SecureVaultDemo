@@ -8,6 +8,13 @@
 import Foundation
 
 struct MockAuthenticationRepository: AuthenticationRepository {
+    func forgotPassword(email: String) async throws {
+        try await Task.sleep(for: .seconds(1))
+        // Intentionally no check on whether this email is a real account.
+        // Success here must look identical whether the email exists or not —
+        // that's the whole point of avoiding account enumeration.
+    }
+    
     func login(email: String, password: String) async throws -> AuthSession {
         try await Task.sleep(for: .seconds(1))
         
