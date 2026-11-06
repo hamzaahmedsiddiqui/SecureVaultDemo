@@ -9,3 +9,4 @@ xcuserdata/
 *.xcscmblueprint
 .swiftpm/
 SecureVaultDemo/Config/FirebaseConfig.swift
+/Config/FirebaseConfig.swift
