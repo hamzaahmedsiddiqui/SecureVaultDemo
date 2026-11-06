@@ -8,3 +8,4 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 .swiftpm/
+SecureVaultDemo/Config/FirebaseConfig.swift
