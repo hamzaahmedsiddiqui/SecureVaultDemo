@@ -1,6 +1,6 @@
 import Foundation
 
-struct FirebaseSignUpRequest: Encodable {
+struct FirebaseAuthRequest: Encodable {
     let email: String
     let password: String
     let returnSecureToken: Bool
@@ -37,3 +37,11 @@ struct FirebaseErrorResponse: Decodable {
     }
 }
 
+struct FirebaseSendPasswordResetRequest: Encodable {
+    let requestType: String = "PASSWORD_RESET"
+    let email: String
+}
+
+struct FirebaseSendPasswordResetResponse: Decodable {
+    let email: String
+}
