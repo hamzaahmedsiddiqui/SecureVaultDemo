@@ -36,7 +36,7 @@ final class LoginViewModel {
         } catch let error as LoginError {
             errorMessage = message(for: error)
         } catch {
-            errorMessage = "Something went wrong. Please try again"
+            errorMessage = "Something went wrong. Please try again \(error)"
         }
     
     }
