@@ -63,14 +63,9 @@ struct FirebaseAuthenticationRepository: AuthenticationRepository {
                 )
             )
 
-            let response: FirebaseAuthResponse =
-                try await httpClient.send(request)
-
-            return AuthSession(
-                accessToken: response.idToken,
-                refreshToken: response.refreshToken,
-                expiresAt: Date().addingTimeInterval(response.expiresIn)
-            )
+            let response: FirebaseSignUpResponse = try await httpClient.send(request)
+            let domainEntity = try response.toDomain()
+            return domainEntity
         } catch NetworkError.serverError(_, let data) {
             throw mapAuthenticationError(from: data)
         } catch is URLError {
