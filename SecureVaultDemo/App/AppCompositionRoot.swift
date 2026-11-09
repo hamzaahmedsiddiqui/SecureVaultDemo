@@ -8,8 +8,8 @@
 import Foundation
 
 enum AppCompositionRoot {
-    static let sessionManager = SessionManager()
-    static let repository = MockAuthenticationRepository()
+    static let sessionManager = SessionManager(keychainService: KeychainService() as KeychainServiceProtocol)
+    static let repository = FirebaseAuthenticationRepository(httpClient: URLSessionHTTPClient()) //MockAuthenticationRepository()
     
     static func makeLoginViewModel(onLoginSuccess: @escaping () -> Void) -> LoginViewModel {
           let useCase = LoginUseCase(repository: repository, sessionManager: sessionManager)
