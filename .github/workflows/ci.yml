@@ -1,4 +1,4 @@
-name: iOS CI
+name: CI
 
 on:
   push:
@@ -12,10 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Create FirebaseConfig.swift
+        run: |
+          cat > SecureVaultDemo/Config/FirebaseConfig.swift <<EOF
+          enum FirebaseConfig {
+              static let apiKey = "${{ secrets.FIREBASE_API_KEY }}"
+              static let baseURLAccounts = "https://identitytoolkit.googleapis.com/v1/accounts"
+          }
+          EOF
+
       - name: Build
         run: |
           xcodebuild build \
             -project SecureVaultDemo.xcodeproj \
             -scheme SecureVaultDemo \
-            -destination 'generic/platform=iOS Simulator,name=iPhone 16' \
+            -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO
