@@ -11,6 +11,7 @@ import Foundation
 final class DashboardViewModel {
     private let logoutUseCase: LogoutUseCase
     private let onLogout: () -> Void
+    var errorMessage: String?
     
     init(logoutUseCase: LogoutUseCase, onLogout: @escaping() -> Void) {
         self.logoutUseCase = logoutUseCase
@@ -18,7 +19,11 @@ final class DashboardViewModel {
     }
 
     func logout() async {
-        await logoutUseCase.execute()
-        onLogout()
+        do {
+            try await logoutUseCase.execute()
+            onLogout()
+        }catch {
+            
+        }
     }
 }

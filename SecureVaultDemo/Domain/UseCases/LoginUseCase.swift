@@ -11,7 +11,7 @@ struct LoginUseCase {
     
     func execute(email: String, password: String) async throws -> AuthSession {
         let session = try await repository.login(email: email, password: password)
-        await sessionManager.start(with: session)
+        try await sessionManager.start(with: session)
         return session
     }
 }

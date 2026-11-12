@@ -9,7 +9,7 @@
 struct LogoutUseCase {
     let sessionManager: SessionManager
 
-    func execute() async {
-        await sessionManager.clear()
+    func execute() async throws{
+        try await sessionManager.clear()
     }
 }
