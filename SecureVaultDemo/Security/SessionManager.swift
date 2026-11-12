@@ -25,7 +25,9 @@ actor SessionManager {
         return true
     }
     
-    func start(with session: AuthSession) async throws{
+    func start(with session: AuthSession) async throws {
+        
+
         self.session = session
         try await keychainService.save(session.accessToken, for: KeychainKey.accessToken.rawValue)
         try await keychainService.save(session.refreshToken, for:  KeychainKey.refreshToken.rawValue)
@@ -57,7 +59,7 @@ actor SessionManager {
         try await keychainService.delete(for: KeychainKey.refreshToken.rawValue)
         try await keychainService.delete(for: KeychainKey.expiresAt.rawValue)
         self.session = nil
-    }   
+    }
     
     private func dateToString(date: Date) -> String {
         String(date.timeIntervalSince1970)

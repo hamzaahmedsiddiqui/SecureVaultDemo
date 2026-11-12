@@ -6,50 +6,58 @@ enum AuthScreen {
     case forgotPassword
 }
 
+enum AuthState {
+    case checking
+    case loggedIn
+    case loggedOut
+}
 
 struct ContentView: View {
-    @State var isLoggedIn: Bool = false
+    @State private var authState: AuthState = .checking
     @State private var authScreen: AuthScreen = .login
-    
+
     var body: some View {
-        if isLoggedIn {
-            DashboardView(
-                viewModel: AppCompositionRoot
-                    .makeDashboardViewModel(
-                        onLogout: {
-                            isLoggedIn = false
-                        })
-            )
-        } else {
-            switch authScreen {
-            case .login:
-                LoginView(
-                    viewModel: AppCompositionRoot
-                        .makeLoginViewModel(
-                            onLoginSuccess: {
-                                isLoggedIn =  true
-                            }),
-                    onSignUpTapped: {
-                        //signUpTapped = true
-                        authScreen = .signUp
-                    },
-                    onForgetPasswordTapped: {
-                        authScreen = .forgotPassword
-                    }
+        Group {
+            switch authState {
+            case .checking:
+                ProgressView()
+            case .loggedIn:
+                DashboardView(
+                    viewModel: AppCompositionRoot.makeDashboardViewModel(
+                        onLogout: { authState = .loggedOut }
+                    )
                 )
-            case .signUp:
-                SignUpView(
-                    viewModel: AppCompositionRoot.makeSignUpViewModel {
-                        isLoggedIn = true
-                    },
-                    onLoginTapped: {
-                        authScreen = .login
-                    })
-            case .forgotPassword:
-                ForgotPasswordView(viewModel: AppCompositionRoot.makeForgotPasswordViewModel(), onBackToLogin: {
-                    authScreen = .login
-                })
+            case .loggedOut:
+                authContent
             }
+        }
+        .task {
+            let restored = (try? await AppCompositionRoot.sessionManager.restoreSession()) ?? false
+            authState = restored ? .loggedIn : .loggedOut
+        }
+    }
+
+    @ViewBuilder
+    private var authContent: some View {
+        switch authScreen {
+        case .login:
+            LoginView(
+                viewModel: AppCompositionRoot.makeLoginViewModel(
+                    onLoginSuccess: { authState = .loggedIn }
+                ),
+                onSignUpTapped: { authScreen = .signUp },
+                onForgetPasswordTapped: { authScreen = .forgotPassword }
+            )
+        case .signUp:
+            SignUpView(
+                viewModel: AppCompositionRoot.makeSignUpViewModel { authState = .loggedIn },
+                onLoginTapped: { authScreen = .login }
+            )
+        case .forgotPassword:
+            ForgotPasswordView(
+                viewModel: AppCompositionRoot.makeForgotPasswordViewModel(),
+                onBackToLogin: { authScreen = .login }
+            )
         }
     }
 }
