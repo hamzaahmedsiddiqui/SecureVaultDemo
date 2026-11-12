@@ -1,2 +1,17 @@
+# macOS
+.DS_Store
 
+# Xcode
+build/
+DerivedData/
+xcuserdata/
 *.xcuserstate
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+# Swift Package Manager
+.swiftpm/
+
+# Secrets
+FirebaseConfig.swift
