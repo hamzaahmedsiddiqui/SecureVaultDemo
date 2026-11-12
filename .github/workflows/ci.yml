@@ -12,15 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Create FirebaseConfig.swift
+     - name: Create FirebaseConfig.swift
         run: |
+          mkdir -p SecureVaultDemo/Config
           cat > SecureVaultDemo/Config/FirebaseConfig.swift <<EOF
           enum FirebaseConfig {
               static let apiKey = "${{ secrets.FIREBASE_API_KEY }}"
               static let baseURLAccounts = "https://identitytoolkit.googleapis.com/v1/accounts"
           }
           EOF
-
+          ls -R SecureVaultDemo | head -40
       - name: Build
         run: |
           xcodebuild build \
