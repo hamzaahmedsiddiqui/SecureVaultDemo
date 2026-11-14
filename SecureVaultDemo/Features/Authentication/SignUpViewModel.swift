@@ -17,7 +17,7 @@ final class SignUpViewModel{
     var password: String = ""
     var confirmPassword: String = ""
     var isLoading: Bool = false
-    var errorMessage: String? = ""
+    var errorMessage: String?
     
     init(useCase: SignUpUseCase, onSignUpSuccess: @escaping () -> Void) {
         self.signUpUseCase = useCase
