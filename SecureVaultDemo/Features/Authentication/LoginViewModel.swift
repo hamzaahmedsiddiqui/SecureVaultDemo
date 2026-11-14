@@ -44,7 +44,7 @@ final class LoginViewModel {
     private func message(for error: LoginError) -> String{
         switch error {
         case .invalidCredentials: return "Incorrect email or password"
-        case .networkUnabailable: return "No internet connection"
+        case .networkUnavailable: return "No internet connection"
         case .serverError: return "Server error. Please try again later."
         case .unknown: return "Something went wrong. Please try again."
         }
