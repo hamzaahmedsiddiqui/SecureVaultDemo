@@ -1,4 +1,5 @@
 import Foundation
+import LocalAuthentication
 
 enum KeychainKey: String{
     case accessToken
@@ -13,6 +14,10 @@ actor SessionManager {
     init(keychainService: KeychainServiceProtocol) {
         self.keychainService = keychainService
     }
+    
+    func hasSavedSession() async throws -> Bool {
+         try await keychainService.read(for: KeychainKey.accessToken.rawValue) != nil
+     }
     
     func restoreSession() async throws -> Bool {
         guard let accessToken = try await getCurrentAccessToken(),

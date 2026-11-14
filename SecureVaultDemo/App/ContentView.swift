@@ -13,18 +13,18 @@ enum AuthState {
 }
 
 struct ContentView: View {
-    @State private var authState: AuthState = .checking
     @State private var authScreen: AuthScreen = .login
-
+    let viewModel: AppStateViewModel
+    
     var body: some View {
         Group {
-            switch authState {
+            switch viewModel.authState {
             case .checking:
                 ProgressView()
             case .loggedIn:
                 DashboardView(
                     viewModel: AppCompositionRoot.makeDashboardViewModel(
-                        onLogout: { authState = .loggedOut }
+                        onLogout: { viewModel.authState = .loggedOut }
                     )
                 )
             case .loggedOut:
@@ -32,8 +32,7 @@ struct ContentView: View {
             }
         }
         .task {
-            let restored = (try? await AppCompositionRoot.sessionManager.restoreSession()) ?? false
-            authState = restored ? .loggedIn : .loggedOut
+            await viewModel.checkSession()
         }
     }
 
@@ -43,14 +42,14 @@ struct ContentView: View {
         case .login:
             LoginView(
                 viewModel: AppCompositionRoot.makeLoginViewModel(
-                    onLoginSuccess: { authState = .loggedIn }
+                    onLoginSuccess: { viewModel.authState = .loggedIn }
                 ),
                 onSignUpTapped: { authScreen = .signUp },
                 onForgetPasswordTapped: { authScreen = .forgotPassword }
             )
         case .signUp:
             SignUpView(
-                viewModel: AppCompositionRoot.makeSignUpViewModel { authState = .loggedIn },
+                viewModel: AppCompositionRoot.makeSignUpViewModel { viewModel.authState = .loggedIn },
                 onLoginTapped: { authScreen = .login }
             )
         case .forgotPassword:
@@ -62,9 +61,9 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
 
 // Creditials
 // test@securevault.com
