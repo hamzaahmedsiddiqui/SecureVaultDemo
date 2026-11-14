@@ -8,18 +8,6 @@
 import Foundation
 import Security
 
-protocol KeychainServiceProtocol {
-    func save(_ value: String, for key: KeychainKey.RawValue) throws
-    func read(for key: KeychainKey.RawValue) throws -> String?
-    func delete(for key: KeychainKey.RawValue) throws
-}
-
-enum KeychainError: Error {
-    case unableToSave(OSStatus)
-    case unableToRead(OSStatus)
-    case unableToDelete(OSStatus)
-}
-
 final class KeychainService: KeychainServiceProtocol{
     
     func save(_ value: String, for key: KeychainKey.RawValue) throws {
