@@ -9,7 +9,7 @@ import Foundation
 
 enum LoginError: Error, Sendable {
     case invalidCredentials
-    case networkUnabailable
+    case networkUnavailable
     case serverError
     case unknown
 }
