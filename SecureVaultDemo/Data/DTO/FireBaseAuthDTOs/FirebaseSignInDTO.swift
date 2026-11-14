@@ -17,7 +17,7 @@ struct FirebaseSignInResponseDTO: Decodable {
 }
 
 extension FirebaseSignInResponseDTO {
-    func toDomain(now: Date = Date()) throws -> AuthSession {
+    func toDomain() throws -> AuthSession {
         guard let payload = FirebaseSignInResponseDTO.decodeJWTPayload(idToken),
               let exp = payload["exp"] as? TimeInterval else {
             throw AuthMappingError.invalidExpiration("missing exp claim")
