@@ -14,7 +14,6 @@ import os
 final class AppStateViewModel {
     var authState: AuthState = .checking
     private let restoreSessionUseCase: RestoreSessionUseCaseProtocol
-    var ErrorMessage: String = ""
     private let logger = Logger(OSLog(subsystem: "com.secureault.app", category: "AppState"))
     
     init(authState: AuthState, restoreSessionUseCase: RestoreSessionUseCaseProtocol) {
