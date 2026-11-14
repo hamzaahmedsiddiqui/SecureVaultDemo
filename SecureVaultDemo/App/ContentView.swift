@@ -15,10 +15,11 @@ enum AuthState {
 struct ContentView: View {
     @State private var authState: AuthState = .checking
     @State private var authScreen: AuthScreen = .login
-
+    let viewModel: AppStateViewModel
+    
     var body: some View {
         Group {
-            switch authState {
+            switch viewModel.authState {
             case .checking:
                 ProgressView()
             case .loggedIn:
@@ -32,8 +33,7 @@ struct ContentView: View {
             }
         }
         .task {
-            let restored = (try? await AppCompositionRoot.sessionManager.restoreSession()) ?? false
-            authState = restored ? .loggedIn : .loggedOut
+            await viewModel.checkSession()
         }
     }
 
@@ -62,9 +62,9 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
 
 // Creditials
 // test@securevault.com
