@@ -9,7 +9,7 @@ import Foundation
 @MainActor
 @Observable
 final class DashboardViewModel {
-    private let logoutUseCase: LogoutUseCase
+    private var logoutUseCase: LogoutUseCase
     private let onLogout: () -> Void
     var errorMessage: String?
     

@@ -10,8 +10,6 @@ protocol RestoreSessionUseCaseProtocol {
     func execute() async throws -> Bool
 }
 
-
-
 struct RestoreSessionUseCase: RestoreSessionUseCaseProtocol{
     private let sessionManager: SessionManager
     private let biometricAuthenticator: BiometricAuthenticatorProtocol

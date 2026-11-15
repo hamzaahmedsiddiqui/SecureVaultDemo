@@ -26,7 +26,7 @@ final class AppStateViewModel {
             let restored =  try await restoreSessionUseCase.execute()
             authState = restored ? .loggedIn : .loggedOut
         } catch {
-            logger.error("Failed tor restore session: \(error.localizedDescription, privacy: .public)")
+            logger.error("Failed to restore session: \(error.localizedDescription, privacy: .public)")
             authState = .loggedOut
         }
     }

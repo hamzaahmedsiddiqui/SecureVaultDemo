@@ -14,12 +14,13 @@ enum AppCompositionRoot {
     static let biometricPreference = BiometricPreferenceStoring()
     
     static func makeLoginViewModel(onLoginSuccess: @escaping () -> Void) -> LoginViewModel {
-        let useCase = LoginUseCase(repository: repository, sessionManager: sessionManager)
-        return LoginViewModel(loginUseCase: useCase, onLoginSuccess: onLoginSuccess)
+        let loginUseCase = LoginUseCase(repository: repository, sessionManager: sessionManager)
+        let enableBiometricUseCase = EnableBiometricLoginUseCase(biometricAuthenticator: biometricAuthenticator, biometricPreference: biometricPreference)
+        return LoginViewModel(loginUseCase: loginUseCase,enableBiometricLoginUseCase: enableBiometricUseCase, onLoginSuccess: onLoginSuccess)
     }
     
     static func makeDashboardViewModel(onLogout: @escaping () -> Void) -> DashboardViewModel {
-        let useCase = LogoutUseCase(sessionManager: sessionManager)
+        let useCase = LogoutUseCase(sessionManager: sessionManager, biometricPreference: biometricPreference)
         return DashboardViewModel(logoutUseCase: useCase, onLogout: onLogout)
     }
     

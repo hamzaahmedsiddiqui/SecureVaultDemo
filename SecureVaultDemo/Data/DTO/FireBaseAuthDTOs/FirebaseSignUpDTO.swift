@@ -14,8 +14,8 @@ enum AuthMappingError: Error {
 }
 
 extension FirebaseSignUpResponse {
-    func toDomain(now: Date = Date()) throws -> AuthSession {
-        guard let payload = FirebaseSignInResponseDTO.decodeJWTPayload(idToken),
+    func toDomain() throws -> AuthSession {
+        guard let payload = JWT.decodeJWTPayload(idToken),
               let exp = payload["exp"] as? TimeInterval else {
             throw AuthMappingError.invalidExpiration("missing exp claim")
         }

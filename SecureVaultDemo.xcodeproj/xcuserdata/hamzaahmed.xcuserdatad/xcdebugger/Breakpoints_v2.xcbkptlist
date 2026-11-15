@@ -3,4 +3,290 @@
    uuid = "48CF7515-438A-4B8C-BF84-B6E3D1E33954"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A393EF15-7AB6-4F1A-80B9-EA66647BF4E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "execute()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A393EF15-7AB6-4F1A-80B9-EA66647BF4E8 - 8600e37f0ee7a7de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "A393EF15-7AB6-4F1A-80B9-EA66647BF4E8 - 1a80288133ff2797"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "A393EF15-7AB6-4F1A-80B9-EA66647BF4E8 - 9f3a5c2144b4dbd8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "A393EF15-7AB6-4F1A-80B9-EA66647BF4E8 - dd1243c5020335d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0129C56-789C-4C2F-BF86-BEC60B6E126C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "execute()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "730F6B9C-BF26-4144-B916-B6709CFFFEEB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "execute()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "730F6B9C-BF26-4144-B916-B6709CFFFEEB - 9f3a5c2144b4da12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+               <Location
+                  uuid = "730F6B9C-BF26-4144-B916-B6709CFFFEEB - b06c38e093451e10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+               <Location
+                  uuid = "730F6B9C-BF26-4144-B916-B6709CFFFEEB - 63bf5d6d6fae9e59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) await resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+               <Location
+                  uuid = "730F6B9C-BF26-4144-B916-B6709CFFFEEB - c98595a2296a521e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+               <Location
+                  uuid = "730F6B9C-BF26-4144-B916-B6709CFFFEEB - f1709e2b0954017b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5DBD770-A108-40D4-951F-55CC5E45B5AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "execute()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D5DBD770-A108-40D4-951F-55CC5E45B5AC - 9f3a5c2144b4db96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+               <Location
+                  uuid = "D5DBD770-A108-40D4-951F-55CC5E45B5AC - 4613f2d705865bdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+               <Location
+                  uuid = "D5DBD770-A108-40D4-951F-55CC5E45B5AC - b06c38e093451f94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+               <Location
+                  uuid = "D5DBD770-A108-40D4-951F-55CC5E45B5AC - e2bf0e6467389798"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for SecureVaultDemo.RestoreSessionUseCase.execute() async throws -&gt; Swift.Bool"
+                  moduleName = "SecureVaultDemo.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamzaahmed/Documents/DemoProjects/SecureVaultDemo/SecureVaultDemo/Domain/UseCases/RestoreSessionUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60911B84-A215-4CA6-8BA6-0E258BEB24C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureVaultDemo/App/AppStateViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "checkSession()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F436879-D411-4C96-AD46-4A9D65DF48D1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureVaultDemo/App/AppStateViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "checkSession()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os
 
 @MainActor
 @Observable
@@ -13,14 +14,17 @@ import Foundation
 final class LoginViewModel {
     private let loginUseCase: LoginUseCase
     private let onLoginSuccess: () -> Void
+    private var enableBiometricLoginUseCase: EnableBiometricLoginUseCaseProtocol
+    private let logger = Logger(OSLog(subsystem: "com.secureault.app", category: "loginViewModel"))
     
     var email = ""
     var password = ""
     var isLoading = false
     var errorMessage: String?
     
-    init(loginUseCase: LoginUseCase, onLoginSuccess: @escaping () -> Void){
+    init(loginUseCase: LoginUseCase, enableBiometricLoginUseCase: EnableBiometricLoginUseCaseProtocol, onLoginSuccess: @escaping () -> Void){
         self.loginUseCase = loginUseCase
+        self.enableBiometricLoginUseCase = enableBiometricLoginUseCase
         self.onLoginSuccess = onLoginSuccess
     }
     
@@ -32,13 +36,17 @@ final class LoginViewModel {
         do{
             _ = try await loginUseCase.execute(email: email, password: password)
             onLoginSuccess()
-    
+            do{
+                _ = try await enableBiometricLoginUseCase.execute()
+            }catch{
+                logger.error("Failed to enable biometrics: \(error.localizedDescription, privacy: .public)")
+            }
+          
         } catch let error as LoginError {
             errorMessage = message(for: error)
         } catch {
             errorMessage = "Something went wrong. Please try again \(error)"
         }
-    
     }
     
     private func message(for error: LoginError) -> String{
