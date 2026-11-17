@@ -14,8 +14,8 @@ import os
 final class LoginViewModel {
     private let loginUseCase: LoginUseCase
     private let onLoginSuccess: () -> Void
-    private var enableBiometricLoginUseCase: EnableBiometricLoginUseCaseProtocol
-    private let logger = Logger(OSLog(subsystem: "com.secureault.app", category: "loginViewModel"))
+    private let enableBiometricLoginUseCase: EnableBiometricLoginUseCaseProtocol
+    private let logger = Logger(OSLog(subsystem: "com.securevault.app", category: "loginViewModel"))
     
     var email = ""
     var password = ""
