@@ -8,22 +8,20 @@
 
 // Domain/Protocol
 protocol EnableBiometricLoginUseCaseProtocol {
-    mutating func execute() async throws -> Bool
+    func execute() async throws -> Bool
 }
 
 // Domain/UseCases
 struct EnableBiometricLoginUseCase: EnableBiometricLoginUseCaseProtocol {
-
-    
     private let biometricAuthenticator: BiometricAuthenticatorProtocol
-    private var biometricPreference: BiometricPreferenceStoringProtocol
+    private let biometricPreference: BiometricPreferenceStoringProtocol
 
     init(biometricAuthenticator: BiometricAuthenticatorProtocol, biometricPreference: BiometricPreferenceStoringProtocol) {
         self.biometricAuthenticator = biometricAuthenticator
         self.biometricPreference = biometricPreference
     }
 
-    mutating func execute() async throws -> Bool {
+    func execute() async throws -> Bool {
         guard biometricAuthenticator.canUseBiometrics() else {
             return false
         }
