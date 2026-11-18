@@ -6,11 +6,18 @@
 //
 
 import Foundation
+protocol SignUpUseCaseProtocol{
+    func execute(email: String, password: String) async throws -> AuthSession
+}
 
-struct SignUpUseCase {
-    let repository: AuthenticationRepository
-    let sessionManager: SessionManager
+struct SignUpUseCase: SignUpUseCaseProtocol {
+    private let repository: AuthenticationRepository
+    private let sessionManager: SessionManager
     
+    init(repository: AuthenticationRepository, sessionManager: SessionManager) {
+        self.repository = repository
+        self.sessionManager = sessionManager
+    }
     
     func execute(email: String, password: String) async throws -> AuthSession{
         let session = try await repository.signUp(email: email, password: password)

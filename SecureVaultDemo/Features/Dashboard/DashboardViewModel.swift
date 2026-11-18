@@ -17,7 +17,7 @@ final class DashboardViewModel {
         self.logoutUseCase = logoutUseCase
         self.onLogout = onLogout
     }
-
+    
     func logout() async {
         do {
             try await logoutUseCase.execute()

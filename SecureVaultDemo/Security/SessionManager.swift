@@ -16,14 +16,14 @@ actor SessionManager {
     }
     
     func hasSavedSession() async throws -> Bool {
-         try await keychainService.read(for: KeychainKey.accessToken.rawValue) != nil
-     }
+        try await keychainService.read(for: KeychainKey.accessToken.rawValue) != nil
+    }
     
     func restoreSession() async throws -> Bool {
         guard let accessToken = try await getCurrentAccessToken(),
               let refreshToken = try await getCurrentRefereshToken(),
               let expiresAt = try await getCurrentExpireDate()
-        else {
+                else {
             return false
         }
         self.session = AuthSession(accessToken: accessToken, refreshToken: refreshToken, expiresAt: expiresAt)
@@ -32,11 +32,11 @@ actor SessionManager {
     
     func start(with session: AuthSession) async throws {
         
-
+        
         self.session = session
         try await keychainService.save(session.accessToken, for: KeychainKey.accessToken.rawValue)
         try await keychainService.save(session.refreshToken, for:  KeychainKey.refreshToken.rawValue)
-       
+        
         let expiresAt = dateToString(date: session.expiresAt)
         try await keychainService.save(expiresAt, for:KeychainKey.expiresAt.rawValue)
     }

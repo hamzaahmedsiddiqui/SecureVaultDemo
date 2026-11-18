@@ -41,7 +41,7 @@ final class LoginViewModel {
             }catch{
                 logger.error("Failed to enable biometrics: \(error.localizedDescription, privacy: .public)")
             }
-          
+            
         } catch let error as LoginError {
             errorMessage = message(for: error)
         } catch {
