@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct BiometricPreferenceStoring: BiometricPreferenceStoringProtocol {
+final class BiometricPreferenceStoring: BiometricPreferenceStoringProtocol {
     private let key = "biometricLoginEnabled"
     private let userDefault: UserDefaults
     

@@ -35,7 +35,7 @@ final class SignUpViewModel{
         errorMessage = nil
         
         do{
-           _ = try await signUpUseCase.execute(email: email, password: password)
+            _ = try await signUpUseCase.execute(email: email, password: password)
             onSignUpSuccess()
         }catch let error as SignUpError{
             errorMessage = message(for: error)
@@ -46,12 +46,12 @@ final class SignUpViewModel{
     }
     
     private func message(for error: SignUpError) -> String {
-         switch error {
-         case .emailAlreadyInUse: return "This email is already registered"
-         case .weakPassword: return "Password must be at least 8 characters"
-         case .networkUnavailable: return "No internet connection"
-         case .serverError: return "Server error. Please try again later."
-         case .unknown: return "Something went wrong. Please try again."
-         }
-     }
+        switch error {
+        case .emailAlreadyInUse: return "This email is already registered"
+        case .weakPassword: return "Password must be at least 8 characters"
+        case .networkUnavailable: return "No internet connection"
+        case .serverError: return "Server error. Please try again later."
+        case .unknown: return "Something went wrong. Please try again."
+        }
+    }
 }

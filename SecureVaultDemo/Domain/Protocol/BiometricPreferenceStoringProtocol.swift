@@ -5,6 +5,6 @@
 //  Created by hamza Ahmed on 2026-11-13.
 //
 
-protocol BiometricPreferenceStoringProtocol {
+protocol BiometricPreferenceStoringProtocol: AnyObject {
     var isEnabled: Bool { get set }
 }

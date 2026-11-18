@@ -14,7 +14,7 @@ import os
 final class AppStateViewModel {
     var authState: AuthState = .checking
     private let restoreSessionUseCase: RestoreSessionUseCaseProtocol
-    private let logger = Logger(OSLog(subsystem: "com.secureault.app", category: "AppState"))
+    private let logger = Logger(OSLog(subsystem: "com.securevault.app", category: "AppState"))
     
     init(authState: AuthState, restoreSessionUseCase: RestoreSessionUseCaseProtocol) {
         self.authState = authState
@@ -26,7 +26,7 @@ final class AppStateViewModel {
             let restored =  try await restoreSessionUseCase.execute()
             authState = restored ? .loggedIn : .loggedOut
         } catch {
-            logger.error("Failed tor restore session: \(error.localizedDescription, privacy: .public)")
+            logger.error("Failed to restore session: \(error.localizedDescription, privacy: .public)")
             authState = .loggedOut
         }
     }

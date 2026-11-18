@@ -35,7 +35,7 @@ struct ContentView: View {
             await viewModel.checkSession()
         }
     }
-
+    
     @ViewBuilder
     private var authContent: some View {
         switch authScreen {

@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct LoginView: View {
-
+    
     @Bindable var viewModel: LoginViewModel
     let onSignUpTapped: () -> Void
     let onForgetPasswordTapped: () -> Void
-
+    
     @FocusState private var focusedField: Field?
     @State private var isPasswordVisible = false
-
+    
     private enum Field {
         case email, password
     }
-
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 32) {
                 header
-
+                
                 VStack(spacing: 16) {
                     emailField
                     passwordField
-
+                    
                     if let errorMessage = viewModel.errorMessage {
                         errorBanner(errorMessage)
                     }
-
+                    
                     forgotPasswordButton
                 }
-
+                
                 VStack(spacing: 20) {
                     loginButton
                     signUpPrompt
@@ -51,29 +51,29 @@ struct LoginView: View {
         .background(Color(.systemBackground))
         .onTapGesture { focusedField = nil }
     }
-
+    
     private var header: some View {
         VStack(spacing: 12) {
             Image(systemName: "lock.shield.fill")
                 .font(.system(size: 44))
                 .foregroundStyle(.tint)
                 .accessibilityHidden(true)
-
+            
             Text("Welcome back")
                 .font(.title.bold())
-
+            
             Text("Log in to continue to SecureVault")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
     }
-
+    
     private var emailField: some View {
         HStack(spacing: 10) {
             Image(systemName: "envelope")
                 .foregroundStyle(.secondary)
                 .frame(width: 20)
-
+            
             TextField("Email", text: $viewModel.email)
                 .textContentType(.emailAddress)
                 .keyboardType(.emailAddress)
@@ -91,13 +91,13 @@ struct LoginView: View {
                 .stroke(focusedField == .email ? Color.accentColor : .clear, lineWidth: 1.5)
         )
     }
-
+    
     private var passwordField: some View {
         HStack(spacing: 10) {
             Image(systemName: "lock")
                 .foregroundStyle(.secondary)
                 .frame(width: 20)
-
+            
             Group {
                 if isPasswordVisible {
                     TextField("Password", text: $viewModel.password)
@@ -109,7 +109,7 @@ struct LoginView: View {
             .focused($focusedField, equals: .password)
             .submitLabel(.go)
             .onSubmit { Task { await viewModel.login() } }
-
+            
             Button {
                 isPasswordVisible.toggle()
             } label: {
@@ -126,7 +126,7 @@ struct LoginView: View {
                 .stroke(focusedField == .password ? Color.accentColor : .clear, lineWidth: 1.5)
         )
     }
-
+    
     private func errorBanner(_ message: String) -> some View {
         HStack(spacing: 8) {
             Image(systemName: "exclamationmark.triangle.fill")
@@ -140,7 +140,7 @@ struct LoginView: View {
         .transition(.opacity.combined(with: .move(edge: .top)))
         .animation(.default, value: message)
     }
-
+    
     private var forgotPasswordButton: some View {
         HStack {
             Spacer()
@@ -150,7 +150,7 @@ struct LoginView: View {
             }
         }
     }
-
+    
     private var loginButton: some View {
         Button {
             Task { await viewModel.login() }
@@ -168,7 +168,7 @@ struct LoginView: View {
         .buttonStyle(.borderedProminent)
         .disabled(viewModel.isLoading || viewModel.email.isEmpty || viewModel.password.isEmpty)
     }
-
+    
     private var signUpPrompt: some View {
         HStack(spacing: 4) {
             Text("Don't have an account?").foregroundStyle(.secondary)

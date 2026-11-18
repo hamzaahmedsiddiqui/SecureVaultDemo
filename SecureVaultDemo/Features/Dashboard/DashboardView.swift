@@ -9,30 +9,30 @@ import SwiftUI
 
 struct DashboardView: View {
     let viewModel: DashboardViewModel
-
+    
     @State private var showLogoutConfirmation = false
-
+    
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
-
+            
             VStack(spacing: 12) {
                 Image(systemName: "checkmark.shield.fill")
                     .font(.system(size: 48))
                     .foregroundStyle(.green)
-
+                
                 Text("You're securely logged in")
                     .font(.title2.bold())
-
+                
                 Text("Your session is protected by biometric authentication and stored securely in the Keychain.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 32)
             }
-
+            
             Spacer()
-
+            
             Button(role: .destructive) {
                 showLogoutConfirmation = true
             } label: {
