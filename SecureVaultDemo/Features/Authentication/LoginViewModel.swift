@@ -12,7 +12,7 @@ import os
 @Observable
 
 final class LoginViewModel {
-    private let loginUseCase: LoginUseCase
+    private let loginUseCase: LoginUseCaseProtocol
     private let onLoginSuccess: () -> Void
     private let enableBiometricLoginUseCase: EnableBiometricLoginUseCaseProtocol
     private let logger = Logger(OSLog(subsystem: "com.securevault.app", category: "loginViewModel"))
@@ -22,7 +22,7 @@ final class LoginViewModel {
     var isLoading = false
     var errorMessage: String?
     
-    init(loginUseCase: LoginUseCase, enableBiometricLoginUseCase: EnableBiometricLoginUseCaseProtocol, onLoginSuccess: @escaping () -> Void){
+    init(loginUseCase: LoginUseCaseProtocol, enableBiometricLoginUseCase: EnableBiometricLoginUseCaseProtocol, onLoginSuccess: @escaping () -> Void){
         self.loginUseCase = loginUseCase
         self.enableBiometricLoginUseCase = enableBiometricLoginUseCase
         self.onLoginSuccess = onLoginSuccess
