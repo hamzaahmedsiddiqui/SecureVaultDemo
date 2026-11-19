@@ -3,14 +3,14 @@ import Foundation
 @MainActor
 @Observable
 final class ForgotPasswordViewModel {
-    private let forgotPasswordUseCase: ForgotPasswordUseCase
+    private let forgotPasswordUseCase: ForgotPasswordUseCaseProtocol
     
     var email = ""
     var isLoading = false
     var errorMessage: String?
     var didSendResetEmail = false
     
-    init(forgotPasswordUseCase: ForgotPasswordUseCase) {
+    init(forgotPasswordUseCase: ForgotPasswordUseCaseProtocol) {
         self.forgotPasswordUseCase = forgotPasswordUseCase
     }
     
