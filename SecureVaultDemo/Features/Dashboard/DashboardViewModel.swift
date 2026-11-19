@@ -5,15 +5,17 @@
 //  Created by hamza Ahmed on 2026-11-03.
 //
 import Foundation
+import os
 
 @MainActor
 @Observable
 final class DashboardViewModel {
-    private let logoutUseCase: LogoutUseCase
+    private let logoutUseCase: LogoutUseCaseProtocol
     private let onLogout: () -> Void
     var errorMessage: String?
-    
-    init(logoutUseCase: LogoutUseCase, onLogout: @escaping() -> Void) {
+    private let logger = Logger(OSLog(subsystem: "com.securevault.app", category: "dashboardViewModel"))
+
+    init(logoutUseCase: LogoutUseCaseProtocol, onLogout: @escaping() -> Void) {
         self.logoutUseCase = logoutUseCase
         self.onLogout = onLogout
     }
@@ -21,9 +23,10 @@ final class DashboardViewModel {
     func logout() async {
         do {
             try await logoutUseCase.execute()
-            onLogout()
-        }catch {
-            
+        } catch {
+            logger.error("Logout failed: \(error.localizedDescription, privacy: .public)")
+            errorMessage = "Logout couldn't fully complete, but you've been signed out."
         }
+        onLogout()
     }
 }
