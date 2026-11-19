@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		7EE5B4FB30AE0A2D00E2CAF3 /* PBXContainerItemProxy */ = {
+		7EE5B50830AE57BB00E2CAF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EF4DFD03054C1F70002794F /* Project object */;
 			proxyType = 1;
@@ -17,11 +17,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7EE5B4F730AE0A2D00E2CAF3 /* SecureVaultDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecureVaultDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EE5B50430AE57BB00E2CAF3 /* SecureVaultDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecureVaultDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF4DFD83054C1F70002794F /* SecureVaultDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecureVaultDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		7EE5B50530AE57BB00E2CAF3 /* SecureVaultDemoTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SecureVaultDemoTests;
+			sourceTree = "<group>";
+		};
 		7EF4DFDA3054C1F70002794F /* SecureVaultDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SecureVaultDemo;
@@ -30,7 +35,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7EE5B4F430AE0A2D00E2CAF3 /* Frameworks */ = {
+		7EE5B50130AE57BB00E2CAF3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				7EF4DFDA3054C1F70002794F /* SecureVaultDemo */,
+				7EE5B50530AE57BB00E2CAF3 /* SecureVaultDemoTests */,
 				7EF4DFD93054C1F70002794F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				7EF4DFD83054C1F70002794F /* SecureVaultDemo.app */,
-				7EE5B4F730AE0A2D00E2CAF3 /* SecureVaultDemoTests.xctest */,
+				7EE5B50430AE57BB00E2CAF3 /* SecureVaultDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,24 +73,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7EE5B4F630AE0A2D00E2CAF3 /* SecureVaultDemoTests */ = {
+		7EE5B50330AE57BB00E2CAF3 /* SecureVaultDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7EE5B4FF30AE0A2D00E2CAF3 /* Build configuration list for PBXNativeTarget "SecureVaultDemoTests" */;
+			buildConfigurationList = 7EE5B50A30AE57BB00E2CAF3 /* Build configuration list for PBXNativeTarget "SecureVaultDemoTests" */;
 			buildPhases = (
-				7EE5B4F330AE0A2D00E2CAF3 /* Sources */,
-				7EE5B4F430AE0A2D00E2CAF3 /* Frameworks */,
-				7EE5B4F530AE0A2D00E2CAF3 /* Resources */,
+				7EE5B50030AE57BB00E2CAF3 /* Sources */,
+				7EE5B50130AE57BB00E2CAF3 /* Frameworks */,
+				7EE5B50230AE57BB00E2CAF3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7EE5B4FC30AE0A2D00E2CAF3 /* PBXTargetDependency */,
+				7EE5B50930AE57BB00E2CAF3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7EE5B50530AE57BB00E2CAF3 /* SecureVaultDemoTests */,
 			);
 			name = SecureVaultDemoTests;
 			packageProductDependencies = (
 			);
 			productName = SecureVaultDemoTests;
-			productReference = 7EE5B4F730AE0A2D00E2CAF3 /* SecureVaultDemoTests.xctest */;
+			productReference = 7EE5B50430AE57BB00E2CAF3 /* SecureVaultDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		7EF4DFD73054C1F70002794F /* SecureVaultDemo */ = {
@@ -119,7 +128,7 @@
 				LastSwiftUpdateCheck = 2700;
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
-					7EE5B4F630AE0A2D00E2CAF3 = {
+					7EE5B50330AE57BB00E2CAF3 = {
 						CreatedOnToolsVersion = 27.0;
 						TestTargetID = 7EF4DFD73054C1F70002794F;
 					};
@@ -143,13 +152,13 @@
 			projectRoot = "";
 			targets = (
 				7EF4DFD73054C1F70002794F /* SecureVaultDemo */,
-				7EE5B4F630AE0A2D00E2CAF3 /* SecureVaultDemoTests */,
+				7EE5B50330AE57BB00E2CAF3 /* SecureVaultDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7EE5B4F530AE0A2D00E2CAF3 /* Resources */ = {
+		7EE5B50230AE57BB00E2CAF3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,7 +175,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7EE5B4F330AE0A2D00E2CAF3 /* Sources */ = {
+		7EE5B50030AE57BB00E2CAF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -183,15 +192,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7EE5B4FC30AE0A2D00E2CAF3 /* PBXTargetDependency */ = {
+		7EE5B50930AE57BB00E2CAF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7EF4DFD73054C1F70002794F /* SecureVaultDemo */;
-			targetProxy = 7EE5B4FB30AE0A2D00E2CAF3 /* PBXContainerItemProxy */;
+			targetProxy = 7EE5B50830AE57BB00E2CAF3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		7EE5B4FD30AE0A2D00E2CAF3 /* Debug */ = {
+		7EE5B50B30AE57BB00E2CAF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -199,7 +208,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7Z9Z5GA67R;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Siddiqui.SecureVaultDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -213,7 +222,7 @@
 			};
 			name = Debug;
 		};
-		7EE5B4FE30AE0A2D00E2CAF3 /* Release */ = {
+		7EE5B50C30AE57BB00E2CAF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -221,7 +230,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7Z9Z5GA67R;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Siddiqui.SecureVaultDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,6 +383,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,6 +421,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -435,11 +446,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7EE5B4FF30AE0A2D00E2CAF3 /* Build configuration list for PBXNativeTarget "SecureVaultDemoTests" */ = {
+		7EE5B50A30AE57BB00E2CAF3 /* Build configuration list for PBXNativeTarget "SecureVaultDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7EE5B4FD30AE0A2D00E2CAF3 /* Debug */,
-				7EE5B4FE30AE0A2D00E2CAF3 /* Release */,
+				7EE5B50B30AE57BB00E2CAF3 /* Debug */,
+				7EE5B50C30AE57BB00E2CAF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
