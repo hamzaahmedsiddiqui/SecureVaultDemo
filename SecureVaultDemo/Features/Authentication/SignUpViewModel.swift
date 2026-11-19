@@ -11,7 +11,7 @@ import Foundation
 @Observable
 
 final class SignUpViewModel{
-    private let signUpUseCase: SignUpUseCase
+    private let signUpUseCase: SignUpUseCaseProtocol
     private let onSignUpSuccess: () -> Void
     var email: String = ""
     var password: String = ""
@@ -19,7 +19,7 @@ final class SignUpViewModel{
     var isLoading: Bool = false
     var errorMessage: String?
     
-    init(useCase: SignUpUseCase, onSignUpSuccess: @escaping () -> Void) {
+    init(useCase: SignUpUseCaseProtocol, onSignUpSuccess: @escaping () -> Void) {
         self.signUpUseCase = useCase
         self.onSignUpSuccess = onSignUpSuccess
     }
